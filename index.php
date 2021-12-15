@@ -7,43 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <?php     
-        if(isset($_POST['butt']))
-        {
-            if(isset($_POST['radio']))
-            {
-                $wartosc = $_POST['number'];
-
-                for($i=0; $i<10; $i++)
-                {
-                    $losowa[$i] = rand(1,$wartosc);
-                }
-
-                $nag = $_POST['nags'];
-                if($_POST['radio']==1)
-                {
-                    print_r($losowa);
-                }
-                if($_POST['radio']==2)
-                {
-                    echo "<ul>";
-                        for($i=0; $i<10; $i++)
-                        {
-                            echo "<li>$losowa[$i]</li>";
-                        }
-                    echo "</ul>";
-
-                }
-                if($_POST['radio']==3)
-                {
-                    for($i=0; $i<10; $i++)
-                    {
-                        echo "<h$nag>$losowa[$i]</h$nag>";
+<?php     
+     if(isset($_POST['butt'])) {
+         if(isset($_POST['radio'])) {
+            $wartosc = $_POST['number'];
+            for($i=0; $i<10; $i++) {
+                $losowa[$i] = rand(1,$wartosc);
+            }
+            $nag = $_POST['nags'];
+            if($_POST['radio']==1) {
+                print_r($losowa);
+            }
+            if($_POST['radio']==2) {
+                echo "<ul>";
+                    for($i=0; $i<10; $i++) {
+                        echo "<li>$losowa[$i]</li>";
                     }
+                echo "</ul>";
+            }
+            if($_POST['radio']==3) {
+                for($i=0; $i<10; $i++) {
+                    echo "<h$nag>$losowa[$i]</h$nag>";
                 }
             }
-        }
-    ?>
+         }
+     }
+?>
     <h1>Wybierz przedział losowania</h1>
     <h2>10 liczb</h2>
     <form action="" method="post">
